@@ -1,0 +1,11 @@
+node_modules/
+.DS_Store
+*.log
+.vscode/
+.idea/
+dist/
+build/
+
+# Binary files - managed separately
+# assets/sounds/
+# assets/images/
