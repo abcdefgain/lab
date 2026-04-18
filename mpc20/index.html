@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Simpler</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Goldman:wght@400;700&family=Noto+Sans+KR:wght@100..900&family=Orbitron:wght@400..900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="machine">
+      <div id="machine-header">
+        <img id="akai-logo" src="assets/images/Akai-Logo.png" alt="Akai Logo" />
+        <div id="machine-caption">
+          <h1>
+            <span id="machine-name">MPC</span>
+            <span id="machine-version">20</span>
+          </h1>
+          <hr />
+          <p>MIDI PRODUCTION CENTER</p>
+        </div>
+      </div>
+
+      <div class="pad-grid">
+        <div id="pad-1" class="pad">
+          <div class="pad-info">
+            <span class="pad-num">PAD 1</span>
+            <span class="pad-command">Z</span>
+          </div>
+          <button></button>
+        </div>
+        <div id="pad-2" class="pad">
+          <div class="pad-info">
+            <span class="pad-num">PAD 2</span>
+            <span class="pad-command">X</span>
+          </div>
+          <button></button>
+        </div>
+        <div id="pad-3" class="pad">
+          <div class="pad-info">
+            <span class="pad-num">PAD 3</span>
+            <span class="pad-command">C</span>
+          </div>
+          <button></button>
+        </div>
+        <div id="pad-4" class="pad">
+          <div class="pad-info">
+            <span class="pad-num">PAD 4</span>
+            <span class="pad-command">V</span>
+          </div>
+          <button></button>
+        </div>
+        <div id="pad-5" class="pad">
+          <div class="pad-info">
+            <span class="pad-num">PAD 5</span>
+            <span class="pad-command">A</span>
+          </div>
+          <button></button>
+        </div>
+        <div id="pad-6" class="pad">
+          <div class="pad-info">
+            <span class="pad-num">PAD 6</span>
+            <span class="pad-command">S</span>
+          </div>
+          <button></button>
+        </div>
+        <div id="pad-7" class="pad">
+          <div class="pad-info">
+            <span class="pad-num">PAD 7</span>
+            <span class="pad-command">D</span>
+          </div>
+          <button></button>
+        </div>
+        <div id="pad-8" class="pad">
+          <div class="pad-info">
+            <span class="pad-num">PAD 8</span>
+            <span class="pad-command">F</span>
+          </div>
+          <button></button>
+        </div>
+        <div id="pad-9" class="pad">
+          <div class="pad-info">
+            <span class="pad-num">PAD 9</span>
+            <span class="pad-command">Q</span>
+          </div>
+          <button></button>
+        </div>
+        <div id="pad-10" class="pad">
+          <div class="pad-info">
+            <span class="pad-num">PAD 10</span>
+            <span class="pad-command">W</span>
+          </div>
+          <button></button>
+        </div>
+        <div id="pad-11" class="pad">
+          <div class="pad-info">
+            <span class="pad-num">PAD 11</span>
+            <span class="pad-command">E</span>
+          </div>
+          <button></button>
+        </div>
+        <div id="pad-12" class="pad">
+          <div class="pad-info">
+            <span class="pad-num">PAD 12</span>
+            <span class="pad-command">R</span>
+          </div>
+          <button></button>
+        </div>
+        <div id="pad-13" class="pad">
+          <div class="pad-info">
+            <span class="pad-num">PAD 13</span>
+            <span class="pad-command">1</span>
+          </div>
+          <button></button>
+        </div>
+        <div id="pad-14" class="pad">
+          <div class="pad-info">
+            <span class="pad-num">PAD 14</span>
+            <span class="pad-command">2</span>
+          </div>
+          <button></button>
+        </div>
+        <div id="pad-15" class="pad">
+          <div class="pad-info">
+            <span class="pad-num">PAD 15</span>
+            <span class="pad-command">3</span>
+          </div>
+          <button></button>
+        </div>
+        <div id="pad-16" class="pad">
+          <div class="pad-info">
+            <span class="pad-num">PAD 16</span>
+            <span class="pad-command">4</span>
+          </div>
+          <button id="pause-pad"></button>
+        </div>
+      </div>
+    </div>
+
+
+    <button id="info-btn" class="info-btn">INFO</button>
+
+
+    <div id="info-modal" class="info-modal">
+      <div class="info-modal-content">
+        <button id="close-info-btn" class="close-btn">×</button>
+        <h2>INFO</h2>
+        <div class="info-details">
+          <h3>v 1.0.0</h3>
+          <div class="info-item">
+            <a href="https://www.instagram.com/abcdefgain" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          </div>
+          <div class="info-item">
+            <a href="https://github.com/abcdefgain/lab/mpc20" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
+    </div>
+  </body>
+</html>
