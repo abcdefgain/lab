@@ -18,6 +18,7 @@ const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const audioBuffers = {};
 const playingSources = [];
 let isAudioContextResumed = false;
+let muteModal = null;
 
 // Audio loading state tracking
 let audioLoadingState = {
@@ -29,12 +30,25 @@ let audioLoadingState = {
 /**
  * Resume AudioContext for mobile autoplay policy compliance
  */
+function showMuteModal() {
+  if (muteModal) {
+    muteModal.classList.add('active');
+  }
+}
+
+function hideMuteModal() {
+  if (muteModal) {
+    muteModal.classList.remove('active');
+  }
+}
+
 function resumeAudioContext() {
   if (isAudioContextResumed) return;
   
   if (audioContext.state === 'suspended') {
     audioContext.resume().then(() => {
       isAudioContextResumed = true;
+      hideMuteModal();
       console.log('AudioContext resumed');
     });
   } else {
@@ -184,8 +198,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // Initialize info modal
+  // Initialize info and mute modals
   initializeInfoModal();
+  initializeMuteModal();
+  showMuteModal();
   
   console.log('🎵 MPC20 ready for playback');
 });
@@ -235,6 +251,26 @@ document.addEventListener('mouseup', () => {
 /**
  * Info modal functionality
  */
+function initializeMuteModal() {
+  muteModal = document.getElementById('mute-modal');
+  const closeMuteBtn = document.getElementById('close-mute-btn');
+  const muteActionBtn = document.getElementById('mute-action-btn');
+
+  if (!muteModal) return;
+
+  closeMuteBtn?.addEventListener('click', hideMuteModal);
+  muteActionBtn?.addEventListener('click', () => {
+    hideMuteModal();
+    resumeAudioContext();
+  });
+
+  muteModal.addEventListener('click', (e) => {
+    if (e.target === muteModal) {
+      hideMuteModal();
+    }
+  });
+}
+
 function initializeInfoModal() {
   const infoBtn = document.getElementById('info-btn');
   const infoModal = document.getElementById('info-modal');
