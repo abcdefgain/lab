@@ -33,12 +33,14 @@ let audioLoadingState = {
 function showMuteModal() {
   if (muteModal) {
     muteModal.classList.add('active');
+    document.body.classList.add('modal-open');
   }
 }
 
 function hideMuteModal() {
   if (muteModal) {
     muteModal.classList.remove('active');
+    document.body.classList.remove('modal-open');
   }
 }
 

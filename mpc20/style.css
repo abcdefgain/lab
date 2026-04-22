@@ -15,6 +15,11 @@ body {
   touch-action: manipulation;
 }
 
+body.modal-open {
+  overflow: hidden;
+  height: 100vh;
+}
+
 #machine-header {
   display: flex;
   align-items: center;
@@ -204,6 +209,7 @@ body {
   max-height: 80vh;
   overflow-y: auto;
   animation: fadeIn 0.3s ease;
+  pointer-events: auto;
 }
 
 .mute-modal-content h2 {
